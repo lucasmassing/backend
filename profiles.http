@@ -1,0 +1,42 @@
+### Criar perfil (esperado: 201)
+POST http://localhost:3000/profiles
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "fullName": "Lucas Silva",
+  "birthDate": "1990-01-15T00:00:00Z",
+  "avatarUrl": "https://example.com/avatar.png"
+}
+
+### Criar segundo perfil para o mesmo user (esperado: 409)
+POST http://localhost:3000/profiles
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "fullName": "Outro Nome"
+}
+
+### Obter perfil por id (esperado 200)
+GET http://localhost:3000/profiles/1
+
+### Obter perfil inexistente (esperado 404)
+GET http://localhost:3000/profiles/999
+
+### Atualizar perfil (esperado 200)
+PUT http://localhost:3000/profiles/1
+Content-Type: application/json
+
+{
+  "fullName": "Lucas Atualizado",
+  "avatarUrl": "https://example.com/updated.png"
+}
+
+### Atualizar perfil inexistente (esperado 404)
+PUT http://localhost:3000/profiles/999
+Content-Type: application/json
+
+{
+  "fullName": "Teste"
+}
