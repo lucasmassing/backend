@@ -1,5 +1,5 @@
 ### Criar perfil (esperado: 201)
-POST http://localhost:3000/profiles
+POST http://localhost:3000/api/profiles
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 
 ### Criar segundo perfil para o mesmo user (esperado: 409)
-POST http://localhost:3000/profiles
+POST http://localhost:3000/api/profiles
 Content-Type: application/json
 
 {
@@ -19,13 +19,13 @@ Content-Type: application/json
 }
 
 ### Obter perfil por id (esperado 200)
-GET http://localhost:3000/profiles/1
+GET http://localhost:3000/api/profiles/1
 
 ### Obter perfil inexistente (esperado 404)
-GET http://localhost:3000/profiles/999
+GET http://localhost:3000/api/profiles/999
 
 ### Atualizar perfil (esperado 200)
-PUT http://localhost:3000/profiles/1
+PUT http://localhost:3000/api/profiles/1
 Content-Type: application/json
 
 {
@@ -34,7 +34,7 @@ Content-Type: application/json
 }
 
 ### Atualizar perfil inexistente (esperado 404)
-PUT http://localhost:3000/profiles/999
+PUT http://localhost:3000/api/profiles/999
 Content-Type: application/json
 
 {
